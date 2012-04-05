@@ -21,7 +21,7 @@ print kp_base_api.remove_url_port("http://t1.dfs.kuaipan.cn/cdlnode/")
 print kp_base_api.remove_url_port("http://api-content.dfs.kuaipan.cn/1/fileops/download_file")=="http://api-content.dfs.kuaipan.cn/1/fileops/download_file"
 print kp_base_api.upload_file( consumer_key, consumer_secret, oauth_token, oauth_token_secret, "app_folder", "/china2.png", False )
 print kp_base_api.upload_file( consumer_key, consumer_secret, oauth_token, oauth_token_secret, "app_folder", "/china5.txt", "./jason.txt" )
-url = kp_base_api.download_file( consumer_key, consumer_secret, oauth_token, oauth_token_secret, "app_folder", "/china5.txt", "./readed.png" )
+url = kp_base_api.download_file( consumer_key, consumer_secret, oauth_token, oauth_token_secret, "app_folder", "/china5.txt", "../readed.png" )
 print url
 
 exit(0)

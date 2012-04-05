@@ -11,6 +11,7 @@ from poster.encode import multipart_encode
 from poster.streaminghttp import register_openers
 import urllib2
 from urlparse import urlparse
+import cookielib
 
 # 一些基础的接口的实现。
 
@@ -327,7 +328,14 @@ def download_file(consumer_key, consumer_secret, oauth_token, oauth_token_secret
     request_url = build_request_url( consumer_key, consumer_secret,
                              "http://api-content.dfs.kuaipan.cn/1/fileops/download_file", oauth_token, oauth_token_secret, extra_params )
     
-    req = urllib2.Request( request_url )
-    r = urllib2.urlopen(req)
-    open(local_file_path, "wb").write( r.read() )
-    
+    cookie=cookielib.CookieJar()
+    opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
+    req = opener.open( request_url )
+    write_to = open(local_file_path, "w")
+    while True:
+        readed = req.read(1024)
+        if len(readed)==0:
+            write_to.close()
+            break
+        else:
+            write_to.write(readed)
