@@ -8,8 +8,8 @@ import re
 token_saved_to = "./authorized.data"
 
 class kp_demo():
-    consumer_key = "xcrXHUiEHAUTXZSs"
-    consumer_secret = "2Pm61rweLUTkfs5S"
+    consumer_key = "your app's consumer_key"
+    consumer_secret = "your app's consumer_secret"
     root = "app_folder"
     
     def __init__(self):

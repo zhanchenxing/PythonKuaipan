@@ -2,8 +2,8 @@
 
 import kp_base_api
 
-consumer_key = "xcrXHUiEHAUTXZSs"
-consumer_secret = "2Pm61rweLUTkfs5S"
+consumer_key = "your app's consumer_key"
+consumer_secret = "your app's consumer_secret"
 
 oauth_token = "00928d1573a8f7176fdebc1b"
 oauth_token_secret = "c0f2bc7609ea4f4d8608ea88d6ada3dd"
